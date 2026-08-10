@@ -1,0 +1,5 @@
+---
+aap_teams:
+  - name: "Stores Automation"
+    organization: "stores"
+    description: "Team for tenant stores"
