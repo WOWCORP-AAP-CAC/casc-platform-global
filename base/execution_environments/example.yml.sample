@@ -1,0 +1,9 @@
+---
+# Example execution environments configuration — rename to .yml to activate.
+# This file belongs in base/execution_environments/ and applies to ALL environments.
+# For environment-specific overrides, place a .yml file in <env>/execution_environments/.
+# Full field reference: https://github.com/WOWCORP-AAP-CAC/aap-casc-engine/blob/main/docs/RESOURCE_CATALOG.md#controller_execution_environments
+controller_execution_environments:
+  - name: "Custom EE — Example"
+    description: "Example execution environment — replace with your EE image"
+    image: quay.io/example/custom-ee:latest

@@ -1,0 +1,13 @@
+---
+# Example users configuration — rename to .yml to activate.
+# This file belongs in base/users/ and applies to ALL environments.
+# For environment-specific overrides, place a .yml file in <env>/users/.
+# Full field reference: https://github.com/WOWCORP-AAP-CAC/aap-casc-engine/blob/main/docs/RESOURCE_CATALOG.md#aap_user_accounts
+aap_user_accounts:
+  - username: example_user
+    email: user@example.com
+    first_name: Example
+    last_name: User
+    is_superuser: false
+    organizations:
+      - Example Organization

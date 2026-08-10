@@ -1,0 +1,28 @@
+# Generated thin caller. It passes only the repository metadata and secrets
+# required for its role; privileged AAP apply credentials stay inside AAP JTs.
+name: CasC Pipeline
+
+# Least privilege for generated callers.
+permissions:
+  contents: read
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  casc:
+    uses: WOWCORP-AAP-CAC/aap-casc-engine/.github/workflows/casc-validate-and-trigger.yml@main
+    with:
+      caller_role: platform
+      control_scm_org: WOWCORP-AAP-CAC
+      control_repo: casc-platform-control
+      control_branch: main
+      dispatcher_jt_name: jt-platform-casc_dispatcher
+      bootstrap_jt_name: jt-platform-bootstrap_tenant
+
+    secrets:
+      AAP_ENV_TARGETS_JSON: ${{ secrets.AAP_ENV_TARGETS_JSON }}
+      ENGINE_REPO_TOKEN: ${{ secrets.ENGINE_REPO_TOKEN }}
+      CONTROL_REPO_TOKEN: ${{ secrets.CONTROL_REPO_TOKEN }}

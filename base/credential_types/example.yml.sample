@@ -1,0 +1,20 @@
+---
+# Example credential types configuration — rename to .yml to activate.
+# This file belongs in base/credential_types/ and applies to ALL environments.
+# For environment-specific overrides, place a .yml file in <env>/credential_types/.
+# Full field reference: https://github.com/WOWCORP-AAP-CAC/aap-casc-engine/blob/main/docs/RESOURCE_CATALOG.md#controller_credential_types
+controller_credential_types:
+  - name: "Example Custom Credential Type"
+    description: "Example credential type — replace with your type"
+    kind: cloud
+    inputs:
+      fields:
+        - id: api_key
+          type: string
+          label: API Key
+          secret: true
+    injectors:
+      extra_vars:
+        # Preserve literal Jinja for AAP injector evaluation (!unsafe).
+
+        my_api_key: !unsafe '{{ api_key }}'

@@ -1,0 +1,9 @@
+---
+# Example teams configuration — rename to .yml to activate.
+# This file belongs in base/teams/ and applies to ALL environments.
+# For environment-specific overrides, place a .yml file in <env>/teams/.
+# Full field reference: https://github.com/WOWCORP-AAP-CAC/aap-casc-engine/blob/main/docs/RESOURCE_CATALOG.md#aap_teams
+aap_teams:
+  - name: "Example Team"
+    description: "Example team — replace with your team"
+    organization: "Example Organization"
