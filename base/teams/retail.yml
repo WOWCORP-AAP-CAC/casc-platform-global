@@ -1,0 +1,5 @@
+---
+aap_teams:
+  - name: "Retail Automation"
+    organization: "retail"
+    description: "Team for tenant retail"
