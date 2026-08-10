@@ -1,0 +1,23 @@
+---
+controller_templates:
+  - name: "jt-platform-casc_dispatcher-retail-prod"
+    description: "Tenant-bound AAP CasC Dispatcher for retail (prod)"
+    project: "prj-platform-casc_engine"
+    playbook: site.yml
+    inventory: "localhost"
+    execution_environment: "Default execution environment"
+    credentials: ["crd-platform-aap_connection", "crd-platform-scm_token"]
+    extra_vars:
+      scm_base_url: "https://github.com"
+      target_env: "prod"
+      dispatch_scope: tenant
+      tenant_id: "retail"
+      triggered_repo: "WOWCORP-AAP-CAC/casc-tenant-retail"
+      control_scm_org: "WOWCORP-AAP-CAC"
+      control_repo: "casc-platform-control"
+      control_branch: "main"
+      platform_scm_org: "WOWCORP-AAP-CAC"
+    ask_variables_on_launch: false
+    survey_enabled: false
+    allow_simultaneous: false
+    state: present

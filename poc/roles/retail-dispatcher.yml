@@ -1,0 +1,15 @@
+---
+controller_roles:
+  - user: "svc_casc_engine"
+    job_template: "jt-platform-casc_dispatcher-retail-poc"
+    lookup_organization: Default
+    role: execute
+    state: present
+  # AWX/AAP named URL: escape reserved characters inside each component.
+  # Organization names that still contain '/' after escaping can fail through
+  # ingress layers that reject %2F in paths — prefer slash-free AAP org names.
+  - team: "Retail Automation++retail"
+    job_template: "jt-platform-casc_dispatcher-retail-poc"
+    lookup_organization: Default
+    role: execute
+    state: present
