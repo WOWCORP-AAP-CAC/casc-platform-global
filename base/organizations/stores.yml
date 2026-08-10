@@ -1,0 +1,4 @@
+---
+aap_organizations:
+  - name: "stores"
+    description: "Stores Automation automation organization"
